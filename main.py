@@ -35,15 +35,15 @@ while game_on:
     # collision with wall
     if (snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or snake.snake_head.ycor() > 280 or
             snake.snake_head.ycor() < -280):
-        game_on = False
-        score.game_over()
+        score.reset()
+        food.refresh()
+        snake.reset_snake()
 
     # detect self collision
-    for seg in snake.snake_segments:
-        if snake.snake_head == seg:
-            pass
-        elif snake.snake_head.distance(seg) < 10:
-            game_on = False
-            score.game_over()
+    for seg in snake.snake_segments[1:]:
+        if snake.snake_head.distance(seg) < 10:
+            score.reset()
+            food.refresh()
+            snake.reset_snake()
 
 screen.exitonclick()

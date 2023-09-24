@@ -9,7 +9,7 @@ class Food(Turtle):
         self.penup()
         self.color("blue")
         self.speed("fastest")
-        self.shapesize(stretch_wid=0.5, stretch_len=0.5)
+        self.shapesize(stretch_wid=0.7, stretch_len=0.7)
         self.refresh()
 
     def refresh(self):
